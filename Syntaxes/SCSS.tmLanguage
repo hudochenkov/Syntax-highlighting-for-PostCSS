@@ -506,10 +506,8 @@
 		</dict>
 		<key>function-content</key>
 		<dict>
-			<key>begin</key>
-			<string>(?&lt;=url\(|format\(|attr\()(?=.+\))</string>
-			<key>end</key>
-			<string>(?=\))</string>
+			<key>match</key>
+			<string>(?&lt;=url\(|format\(|attr\().+(?=\))</string>
 			<key>name</key>
 			<string>string.quoted.double.css.sass</string>
 		</dict>
