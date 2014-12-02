@@ -466,18 +466,27 @@
 		<key>comma</key>
 		<dict>
 			<key>match</key>
-			<string>\band\b|\bor\b|,</string>
+			<string>\b(and|or)\b|,</string>
 			<key>name</key>
 			<string>comment.punctuation.comma.sass</string>
 		</dict>
 		<key>comment-tag</key>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;={{)</string>
+			<string>{{</string>
 			<key>end</key>
-			<string>(?=}})</string>
+			<string>}}</string>
 			<key>name</key>
-			<string>comment.tag.sass</string>
+			<string>comment.tags.sass</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[\w-]+</string>
+					<key>name</key>
+					<string>comment.tag.sass</string>
+				</dict>
+			</array>
 		</dict>
 		<key>curly-brackets</key>
 		<dict>
