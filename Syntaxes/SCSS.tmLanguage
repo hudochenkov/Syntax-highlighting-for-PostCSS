@@ -454,7 +454,7 @@
 			<key>begin</key>
 			<string>//</string>
 			<key>end</key>
-			<string>$\n?</string>
+			<string>$</string>
 			<key>name</key>
 			<string>comment.line.sass</string>
 			<key>patterns</key>

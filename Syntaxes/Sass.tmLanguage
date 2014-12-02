@@ -16,9 +16,9 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>^(/\*|//)</string>
+			<string>/\*</string>
 			<key>end</key>
-			<string>\*/|(?=^[a-zA-Z0-9#.%$@\[=*+])</string>
+			<string>\*/</string>
 			<key>name</key>
 			<string>comment.block.sass</string>
 			<key>patterns</key>
@@ -31,9 +31,9 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\s/\*</string>
+			<string>^//</string>
 			<key>end</key>
-			<string>\*/</string>
+			<string>(?=^\S)</string>
 			<key>name</key>
 			<string>comment.block.sass</string>
 			<key>patterns</key>
@@ -498,7 +498,7 @@
 			<key>begin</key>
 			<string>//</string>
 			<key>end</key>
-			<string>$\n?</string>
+			<string>$</string>
 			<key>name</key>
 			<string>comment.line.sass</string>
 			<key>patterns</key>
