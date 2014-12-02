@@ -498,7 +498,7 @@
 		<key>dotdotdot</key>
 		<dict>
 			<key>match</key>
-			<string>\.\.\.</string>
+			<string>\.{3}</string>
 			<key>name</key>
 			<string>variable.other</string>
 		</dict>
@@ -551,9 +551,9 @@
 		<key>function-content</key>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;=url\(|format\(|attr\()</string>
+			<string>(?&lt;=url\(|format\(|attr\()(?=.+\))</string>
 			<key>end</key>
-			<string>.(?=\))</string>
+			<string>(?=\))</string>
 			<key>name</key>
 			<string>string.quoted.double.css.sass</string>
 		</dict>
