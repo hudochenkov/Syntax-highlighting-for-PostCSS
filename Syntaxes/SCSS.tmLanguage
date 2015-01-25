@@ -15,8 +15,10 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>include</key>
-			<string>#pseudo-class</string>
+		<key>match</key>
+		<string>^(::|:-)\w*|(?&lt;=\]|\)|not\(|\*|>|>\s):[a-z:-]+</string>
+		<key>name</key>
+		<string>entity.other.attribute-name.pseudo-class.css.sass</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -114,9 +116,9 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>:</string>
+			<string>:(?!$)</string>
 			<key>end</key>
-			<string>$|;|(?=\s\(|and\(|{|})</string>
+			<string>;|(?=\s\(|and\(|{|})</string>
 			<key>name</key>
 			<string>property-value.sass</string>
 			<key>patterns</key>
@@ -290,14 +292,42 @@
 			<string>#function-quoted</string>
 		</dict>
 		<dict>
-			<key>include</key>
-			<string>#parent-selector</string>
+			<key>begin</key>
+			<string>&amp;</string>
+			<key>end</key>
+			<string>$|(?=\s|,|;|#|\.|\(|\)|\[|{|>|\+|~|-|_)</string>
+			<key>name</key>
+			<string>keyword.other.important.css.sass</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#interpolation</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(?&lt;!\-|\()\b(a|abbr|acronym|address|applet|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|picture|pre|progress|q|samp|script|section|select|small|source|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video|main|svg|rect|ruby|center|circle|ellipse|line|polyline|polygon|path|text|u|x)\b(?!-|\)|:\s)</string>
+			<key>begin</key>
+			<string>(?&lt;!\-|\()\b(a|abbr|acronym|address|applet|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|picture|pre|progress|q|samp|script|section|select|small|source|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video|main|svg|rect|ruby|center|circle|ellipse|line|polyline|polygon|path|text|u|x)\b(?!-|\))</string>
+			<key>end</key>
+			<string>$|(?=\s|,|;|#|\.|\(|\)|\[|{|>|\+|~|-|_)</string>
 			<key>name</key>
 			<string>entity.name.tag.css.sass.symbol</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#interpolation</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#pseudo-class</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -340,6 +370,10 @@
 			</array>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#numeric</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>\.|(?&lt;=&amp;)[\w-]</string>
 			<key>end</key>
@@ -365,10 +399,6 @@
 		<dict>
 			<key>include</key>
 			<string>#rgb</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#numeric</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -406,7 +436,7 @@
 		<key>function-quoted</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;=url\(|format\(|attr\().+(?=\))</string>
+			<string>(?&lt;=url\(|format\(|attr\().+?(?=\))</string>
 			<key>name</key>
 			<string>string.quoted.sass</string>
 		</dict>
@@ -443,7 +473,7 @@
 		<key>numeric</key>
 		<dict>
 			<key>match</key>
-			<string>(-|\.)?\b[\d\.]+</string>
+			<string>(-|\.)?\b\d+\.?\d*</string>
 			<key>name</key>
 			<string>constant.numeric.css.sass</string>
 		</dict>
@@ -478,7 +508,7 @@
 		<key>reserved-words</key>
 		<dict>
 			<key>match</key>
-			<string>\b(true|false|null|from|through|to|in|not|screen)\b</string>
+			<string>\b(true|false|null|from|through|to|in|not|screen)\b(?!-)</string>
 			<key>name</key>
 			<string>keyword.other.important.css.sass</string>
 		</dict>
