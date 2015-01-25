@@ -16,7 +16,7 @@
 	<array>
 		<dict>
 		<key>match</key>
-		<string>^(::|:-)\w*|(?&lt;=\]|\)|not\(|\*|>|>\s):[a-z:-]+</string>
+		<string>(?&lt;=^|\]|}|\)|not\(|\*):[a-z:-]*</string>
 		<key>name</key>
 		<string>entity.other.attribute-name.pseudo-class.css.sass</string>
 		</dict>
@@ -24,7 +24,7 @@
 			<key>begin</key>
 			<string>\$[\w-]+(?=:\s*\()</string>
 			<key>end</key>
-			<string>;</string>
+			<string>;|\)\s*$</string>
 			<key>name</key>
 			<string>map-outer.sass</string>
 			<key>beginCaptures</key>
@@ -57,10 +57,6 @@
 						<dict>
 							<key>include</key>
 							<string>#interpolation</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#comma</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -110,13 +106,13 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comma</string>
+					<string>#interpolation</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>:(?!$)</string>
+			<string>:</string>
 			<key>end</key>
 			<string>;|(?=\s\(|and\(|{|})</string>
 			<key>name</key>
@@ -134,10 +130,6 @@
 				<dict>
 					<key>include</key>
 					<string>#interpolation</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#comma</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -277,10 +269,6 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#comma</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#variable</string>
 		</dict>
 		<dict>
@@ -295,15 +283,11 @@
 			<key>begin</key>
 			<string>&amp;</string>
 			<key>end</key>
-			<string>$|(?=\s|,|;|#|\.|\(|\)|\[|{|>|\+|~|-|_)</string>
+			<string>$|(?=\s|\w|,|;|#|\.|\(|\)|\[|{|>|\+|~|-|_)</string>
 			<key>name</key>
 			<string>keyword.other.important.css.sass</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#interpolation</string>
-				</dict>
 				<dict>
 					<key>include</key>
 					<string>#pseudo-class</string>
@@ -319,10 +303,6 @@
 			<string>entity.name.tag.css.sass.symbol</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#interpolation</string>
-				</dict>
 				<dict>
 					<key>include</key>
 					<string>#pseudo-class</string>
@@ -429,7 +409,7 @@
 		<key>function</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;=\s|\(|,|:)(?!url|format|attr)[\w-]+(?=\()</string>
+			<string>(?&lt;=\s|\(|,|:|{)(?!url|format|attr)[\w\.-]+(?=\()</string>
 			<key>name</key>
 			<string>support.function.name.sass</string>
 		</dict>
@@ -459,7 +439,7 @@
 		<key>pseudo-class</key>
 		<dict>
 			<key>match</key>
-			<string>:(:?)[a-z-]+</string>
+			<string>:(:?)[a-z-]*</string>
 			<key>name</key>
 			<string>entity.other.attribute-name.pseudo-class.css.sass</string>
 		</dict>
@@ -508,16 +488,9 @@
 		<key>reserved-words</key>
 		<dict>
 			<key>match</key>
-			<string>\b(true|false|null|from|through|to|in|not|screen)\b(?!-)</string>
+			<string>\b(true|false|null|from|through|to|in|or|and|not|screen)\b(?!-)</string>
 			<key>name</key>
 			<string>keyword.other.important.css.sass</string>
-		</dict>
-		<key>comma</key>
-		<dict>
-			<key>match</key>
-			<string>\b(and|or)\b|,</string>
-			<key>name</key>
-			<string>comment.punctuation.comma.sass</string>
 		</dict>
 		<key>comment-tag</key>
 		<dict>
@@ -560,7 +533,7 @@
 		<key>quoted</key>
 		<dict>
 			<key>begin</key>
-			<string>('|")(?=.*\1)</string>
+			<string>('|")</string>
 			<key>end</key>
 			<string>\1</string>
 			<key>name</key>
@@ -580,7 +553,15 @@
 			<key>end</key>
 			<string>}</string>
 			<key>name</key>
-			<string>support.function.interpolation.sass</string>
+			<string>interpolation-outer.sass</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.interpolation.sass</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -601,7 +582,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comma</string>
+					<string>#function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property-value</string>
 				</dict>
 			</array>
 		</dict>
@@ -612,7 +597,15 @@
 			<key>end</key>
 			<string>}</string>
 			<key>name</key>
-			<string>support.function.interpolation.sass</string>
+			<string>interpolation-outer.sass</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.interpolation.sass</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -637,7 +630,11 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comma</string>
+					<string>#function</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property-value</string>
 				</dict>
 			</array>
 		</dict>
