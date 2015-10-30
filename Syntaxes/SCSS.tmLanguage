@@ -12,7 +12,7 @@
 	<key>foldingStopMarker</key>
 	<string>\*/|^\s*$</string>
 	<key>name</key>
-	<string>SCSS</string>
+	<string>PostCSS</string>
 	<key>patterns</key>
 	<array>
 		<dict>
