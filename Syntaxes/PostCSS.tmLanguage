@@ -62,7 +62,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other</string>
+					<string>variable.parameter.sass</string>
 				</dict>
 			</dict>
 			<key>patterns</key>
