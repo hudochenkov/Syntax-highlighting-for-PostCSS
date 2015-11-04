@@ -344,6 +344,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#function-content-var</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#operator</string>
 				</dict>
 				<dict>
@@ -512,6 +516,13 @@
 			<key>name</key>
 			<string>string.quoted.double.css.sass</string>
 		</dict>
+		<key>function-content-var</key>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=var\().+(?=\))</string>
+			<key>name</key>
+			<string>variable.parameter.sass</string>
+		</dict>
 		<key>interpolation</key>
 		<dict>
 			<key>begin</key>
@@ -677,7 +688,7 @@
 			<key>match</key>
 			<string>\$[\w-]+</string>
 			<key>name</key>
-			<string>variable.other.value</string>
+			<string>variable.parameter.sass</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
