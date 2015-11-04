@@ -143,6 +143,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#variable-root-css</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#numeric</string>
 		</dict>
 		<dict>
@@ -687,6 +691,13 @@
 		<dict>
 			<key>match</key>
 			<string>\$[\w-]+</string>
+			<key>name</key>
+			<string>variable.parameter.sass</string>
+		</dict>
+		<key>variable-root-css</key>
+		<dict>
+			<key>match</key>
+			<string>--[\w-]+</string>
 			<key>name</key>
 			<string>variable.parameter.sass</string>
 		</dict>
