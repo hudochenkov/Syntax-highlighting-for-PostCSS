@@ -506,7 +506,7 @@
 		<key>function-content-var</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;=var\().+(?=\))</string>
+			<string>(?&lt;=var\()[\w-]+(?=\))</string>
 			<key>name</key>
 			<string>variable.parameter.postcss</string>
 		</dict>
