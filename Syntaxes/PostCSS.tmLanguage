@@ -57,6 +57,8 @@
 			<string>(?=;|\)\s*\{|\)\n\)|@)</string>
 			<key>name</key>
 			<string>sass-script-maps</string>
+			<key>comment</key>
+			<string>For $variables in document root</string>
 			<key>captures</key>
 			<dict>
 				<key>0</key>
