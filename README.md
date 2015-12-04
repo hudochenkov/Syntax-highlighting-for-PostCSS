@@ -5,6 +5,7 @@
 PostCSS syntax highlighting for Sublime Text. This package is fork of [Syntax Highlighting for Sass] by @P233 with few changes making this more useful rather Sass package:
 
 * Using SCSS syntax highlighting. This covers most of PostCSS possible syntax. Removed `Sass` syntax highlighting and all Sass completions;
+* Support for CSS custom properties `var(--variable-name)` and `--variable-name`;
 * Automatic enable syntax highlighting by `*.pcss` and `*.postcss` file extensions;
 * Standard CSS comments (`/* comment */`) instead of Sass single line comments (`// comment`).
 
