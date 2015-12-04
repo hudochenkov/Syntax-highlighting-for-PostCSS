@@ -699,7 +699,7 @@
 		<key>variable-root-css</key>
 		<dict>
 			<key>match</key>
-			<string>--[\w-]+</string>
+			<string>(?&lt;!&amp;)--[\w-]+</string>
 			<key>name</key>
 			<string>variable.parameter.postcss</string>
 		</dict>
