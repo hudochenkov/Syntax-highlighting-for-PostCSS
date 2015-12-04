@@ -107,10 +107,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comma</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#function</string>
 				</dict>
 				<dict>
@@ -158,10 +154,6 @@
 		<dict>
 			<key>include</key>
 			<string>#flag</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#comma</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -338,10 +330,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comma</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#function</string>
 				</dict>
 				<dict>
@@ -437,13 +425,6 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>comma</key>
-		<dict>
-			<key>match</key>
-			<string>\b(and|or)\b|,</string>
-			<key>name</key>
-			<string>comment.punctuation.comma.postcss</string>
-		</dict>
 		<key>comment-tag</key>
 		<dict>
 			<key>begin</key>
@@ -557,10 +538,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#comma</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#double-quoted</string>
 				</dict>
 				<dict>
@@ -638,10 +615,6 @@
 				<dict>
 					<key>include</key>
 					<string>#unit</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#comma</string>
 				</dict>
 			</array>
 		</dict>
