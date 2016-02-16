@@ -9,7 +9,7 @@ PostCSS syntax highlighting for Sublime Text. This package is fork of [Syntax Hi
 * Automatic enable syntax highlighting by `*.pcss` and `*.postcss` file extensions;
 * Standard CSS comments (`/* comment */`) instead of Sass single line comments (`// comment`).
 
-Definitely there is a lot of possible improvements can be made to this syntax, but frankly I don't understand in syntax files much and hope for the help of community.
+There is a lot of possible improvements can be made to this syntax, but frankly, I don't understand in syntax files much and hope for the help of the community.
 
 ## Installation
 
