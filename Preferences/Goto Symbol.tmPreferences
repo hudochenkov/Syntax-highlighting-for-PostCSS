@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Goto Symbol</string>
 	<key>scope</key>
-	<string>support.function.name.sass.no-completions</string>
+	<string>support.function.name.postcss.no-completions</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
