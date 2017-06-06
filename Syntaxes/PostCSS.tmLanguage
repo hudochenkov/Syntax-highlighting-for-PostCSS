@@ -395,7 +395,7 @@
 		<key>function-content</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;=url\(|format\(|attr\().+(?=\))</string>
+			<string>(?&lt;=url\(|format\(|attr\().+?(?=\))</string>
 			<key>name</key>
 			<string>string.quoted.double.css.postcss</string>
 		</dict>
